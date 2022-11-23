@@ -1,0 +1,12 @@
+.Navbar {
+    display: block;
+    height: 100%;
+    width: 20%;
+    background-color: #b8c1d9;
+    /*   #F26526*/
+}
+
+.Meeting {
+    display: block;
+    margin-left: 35%;
+}
