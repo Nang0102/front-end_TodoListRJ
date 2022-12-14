@@ -17,11 +17,13 @@ import Username from "./component/ChiNhanh/User/username";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/DangNhap" element={<DangNhap></DangNhap>}></Route>
-        <Route path="/DangKy" element={<DangKy></DangKy>}></Route>
-        {/* <Route
+    <>
+      <p> Hello</p>
+      <Router>
+        <Routes>
+          <Route path="/DangNhap" element={<DangNhap></DangNhap>}></Route>
+          <Route path="/DangKy" element={<DangKy></DangKy>}></Route>
+          {/* <Route
           path="/ChiNhanh"
           element={
             <Home>
@@ -29,25 +31,25 @@ function App() {
             </Home>
           }
         ></Route> */}
-        <Route
-          path="/VatTu"
-          element={
-            <Home>
-              <VatTu></VatTu>
-            </Home>
-          }
-        ></Route>
+          <Route
+            path="/VatTu"
+            element={
+              <Home>
+                <VatTu></VatTu>
+              </Home>
+            }
+          ></Route>
 
-        <Route
-          path="/User"
-          element={
-            <Home>
-              <Username />
-            </Home>
-          }
-        ></Route>
+          <Route
+            path="/User"
+            element={
+              <Home>
+                <Username />
+              </Home>
+            }
+          ></Route>
 
-        {/* <Route
+          {/* <Route
           path="/Trangluongnhanvien"
           element={
             <Home>
@@ -56,9 +58,9 @@ function App() {
           }
         ></Route> */}
 
-        <Route path="/DangKyChu" element={<DangKyChu />}></Route>
+          <Route path="/DangKyChu" element={<DangKyChu />}></Route>
 
-        {/* <Route
+          {/* <Route
           path="/BanHang"
           element={
             <Home>
@@ -66,8 +68,9 @@ function App() {
             </Home>
           }
         ></Route> */}
-      </Routes>
-    </Router>
+        </Routes>
+      </Router>
+    </>
   );
 }
 
