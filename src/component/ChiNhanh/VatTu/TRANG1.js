@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import moment from "moment";
 
@@ -127,9 +127,6 @@ function TRANG1({ Data1 }) {
     },
   ];
 
-  function search(rows) {
-    return rows.filter((row) => row.name.toLowerCase().indexOf(TimKiem) > -1);
-  }
 
   const handleSubmite = () => {
     const url = "https://backendtodolist.onrender.com/Task";
@@ -140,7 +137,7 @@ function TRANG1({ Data1 }) {
       .post(url, Credentials)
       .then((response) => {
         const result = response.data;
-        const { status, message, data } = result;
+        const { status, message } = result;
         if (status !== "SUCCESS") {
           alert(message, status);
         } else {

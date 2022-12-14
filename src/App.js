@@ -12,18 +12,17 @@ import Username from "./component/ChiNhanh/User/username";
 
 function App() {
   return (
-    <>
-      <p> Hello, Welcome To MyApp!</p>
+    <div className="App">
       <Router>
         <Routes>
-          <Route path="/DangNhap" element={<DangNhap></DangNhap>}></Route>
-          <Route path="/DangKy" element={<DangKy></DangKy>}></Route>
+          <Route path="/DangNhap" element={<DangNhap/>}></Route>
+          <Route path="/DangKy" element={<DangKy/>}></Route>
 
           <Route
             path="/VatTu"
             element={
               <Home>
-                <VatTu></VatTu>
+                <VatTu/>
               </Home>
             }
           ></Route>
@@ -40,7 +39,7 @@ function App() {
           <Route path="/DangKyChu" element={<DangKyChu />}></Route>
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 
