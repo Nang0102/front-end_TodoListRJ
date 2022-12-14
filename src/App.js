@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import DangNhap from "./component/login/DangNhap";
 import DangKy from "./component/login/Dangky";
 import DangKyChu from "./component/login/DangKyChu";
@@ -13,7 +13,6 @@ import Username from "./component/ChiNhanh/User/username";
 function App() {
   return (
     <div className="App">
-      <Router>
         <Routes>
           <Route path="/DangNhap" element={<DangNhap/>}></Route>
           <Route path="/DangKy" element={<DangKy/>}></Route>
@@ -38,7 +37,6 @@ function App() {
 
           <Route path="/DangKyChu" element={<DangKyChu />}></Route>
         </Routes>
-      </Router>
     </div>
   );
 }
