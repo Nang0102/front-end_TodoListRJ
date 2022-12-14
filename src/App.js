@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DangNhap from "./component/login/DangNhap";
 import DangKy from "./component/login/Dangky";
 import DangKyChu from "./component/login/DangKyChu";
@@ -14,30 +14,32 @@ function App() {
   return (
     <>
       <p> Hello, Welcome To MyApp!</p>
-      <Routes>
-        <Route path="/DangNhap" element={<DangNhap></DangNhap>}></Route>
-        <Route path="/DangKy" element={<DangKy></DangKy>}></Route>
+      <Router>
+        <Routes>
+          <Route path="/DangNhap" element={<DangNhap></DangNhap>}></Route>
+          <Route path="/DangKy" element={<DangKy></DangKy>}></Route>
 
-        <Route
-          path="/VatTu"
-          element={
-            <Home>
-              <VatTu></VatTu>
-            </Home>
-          }
-        ></Route>
+          <Route
+            path="/VatTu"
+            element={
+              <Home>
+                <VatTu></VatTu>
+              </Home>
+            }
+          ></Route>
 
-        <Route
-          path="/User"
-          element={
-            <Home>
-              <Username />
-            </Home>
-          }
-        ></Route>
+          <Route
+            path="/User"
+            element={
+              <Home>
+                <Username />
+              </Home>
+            }
+          ></Route>
 
-        <Route path="/DangKyChu" element={<DangKyChu />}></Route>
-      </Routes>
+          <Route path="/DangKyChu" element={<DangKyChu />}></Route>
+        </Routes>
+      </Router>
     </>
   );
 }
