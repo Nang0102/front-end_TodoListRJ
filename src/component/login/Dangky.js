@@ -92,7 +92,7 @@ function DangKy() {
         .catch((err) => {
           console.log(err);
         });
-      navigate(`/DangNhap`);
+      navigate(`/`);
     }
   };
   return (

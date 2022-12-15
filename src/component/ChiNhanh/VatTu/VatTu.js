@@ -30,7 +30,7 @@ const VatTu = () => {
   // var userId=localStorage.getItem("Idchu");
 
   const Gettask = async () => {
-    // setLoading(true);
+    setLoading(true);
     const url = `https://backendtodolist.onrender.com/Task/${idd}`;
     axios
       .get(url)
@@ -42,7 +42,9 @@ const VatTu = () => {
         } else {
           setData1(data);
           setshow(true);
-          // console.log("Trang ", data);
+          console.log("setLoading ", setLoading);
+
+          setLoading(false);
           // gettrang2(data)
         }
       })

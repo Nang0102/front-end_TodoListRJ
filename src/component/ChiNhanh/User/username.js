@@ -56,17 +56,20 @@ function Username() {
   const [id, setId] = useState("");
 
   const GetUser = async () => {
-    // setLoading(true);
-
     const url = `https://backendtodolist.onrender.com/user/${id}`;
     // const url = `http://localhost:5000/user${id}`;
+    setLoading(true);
 
     axios
+
       .get(url)
+
       .then((response) => {
         const result = response.data;
         setData(result);
         setLoading(false);
+        console.log("setData", setData);
+        console.log("setLoading", setLoading);
       })
       .catch((err) => {
         console.log(err);
@@ -76,7 +79,7 @@ function Username() {
 
   useEffect(() => {
     GetUser();
-  });
+  }, []);
 
   const handleDelete = () => {
     const url = `https://backendtodolist.onrender.com/user/${id}`;
