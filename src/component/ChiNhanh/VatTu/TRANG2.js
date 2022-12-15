@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import moment from "moment";
 
@@ -100,9 +100,10 @@ function TRANG2({ Data2 }) {
               >
                 View
               </Button>
-              |,
+
               <Button
                 size="sm"
+                style={{ marginLeft: 25 }}
                 variant="danger"
                 onClick={() => {
                   handleDeleteShow(
@@ -118,7 +119,6 @@ function TRANG2({ Data2 }) {
               >
                 Delete
               </Button>
-              |,
             </div>
           </>
         );

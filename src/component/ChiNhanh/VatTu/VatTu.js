@@ -23,13 +23,14 @@ const VatTu = () => {
   const [Data1, setData1] = useState([]);
   const [Data2, setData2] = useState([]);
   // const [TimKiem, setTimKiem] = useState("");
-  // const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   var idd = localStorage.getItem("Idchu");
 
   // var userId=localStorage.getItem("Idchu");
 
   const Gettask = async () => {
+    // setLoading(true);
     const url = `https://backendtodolist.onrender.com/Task/${idd}`;
     axios
       .get(url)
@@ -40,7 +41,8 @@ const VatTu = () => {
           alert(message, status);
         } else {
           setData1(data);
-          console.log("Trang ", data);
+          setshow(true);
+          // console.log("Trang ", data);
           // gettrang2(data)
         }
       })
@@ -76,27 +78,9 @@ const VatTu = () => {
         if (status !== "SUCCESS") {
           alert(message, status);
         } else {
-          //   data.map((i) =>{
-          //    if(i.level==="important"){
-          // let item={
-
-          //   complete: i.complete,
-          //   description:  i.description,
-          //   enddate:  i.enddate,
-          //   startday:  i.startday,
-          //   level:  i.level,
-          //   title:  i.title,
-          //   userId:  i.userId,
-          //   icontype:  i.icontype,
-          //   type:  i.type
-
-          // }
-          // // Data2.push(item)
-          // handlelevel(item)
-          //      }
-          //        })
-
           setData2(data);
+          console.log("setData2", setData2);
+          // setshow(false);
           // gettrang2(data)
         }
       })
@@ -108,7 +92,7 @@ const VatTu = () => {
   useEffect(() => {
     Gettask();
     Gettaskimportane();
-  });
+  }, []);
   let a = "   ";
   return (
     <div>
@@ -206,7 +190,6 @@ const VatTu = () => {
 
       <div style={{ marginLeft: "260px" }}>
         {show && <TRANG1 Data1={Data1} />}
-        {/* <Chinhnh/> */}
         {show1 && <TRANG2 Data2={Data2} />}
         {show2 && <TRANG3 />}
         {show3 && <TRANG4 />}
