@@ -8,12 +8,13 @@ import DangKyChu from "./component/login/DangKyChu";
 import Home from "./component/home/homeindex";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import VatTu from "./component/ChiNhanh/VatTu/VatTu";
+// import VatTu from "./component/ChiNhanh/VatTu/VatTu";
 // import VatTu from "./features/ChiNhanh/VatTu/VatTu";
 
 // import BanHang from "./features/ChiNhanh/BANHANG/navbargiohang";
 // import User from "./features/ChiNhanh/User/User";
 import Username from "./component/ChiNhanh/User/username";
+import TRANG1 from "./component/ChiNhanh/VatTu/TRANG1";
 
 function App() {
   return (
@@ -33,7 +34,8 @@ function App() {
           path="/VatTu"
           element={
             <Home>
-              <VatTu></VatTu>
+              {/* <VatTu></VatTu> */}
+              <TRANG1 />
             </Home>
           }
         ></Route>
