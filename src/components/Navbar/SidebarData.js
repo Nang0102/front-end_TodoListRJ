@@ -36,7 +36,7 @@ export const SidebarData = [
   // },
   {
     title: "Đăng Xuất",
-    path: "/DangNhap",
+    path: "/",
     icon: <IoIcons.IoMdArrowBack />,
     cName: "nav-text",
   },
