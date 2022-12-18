@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../components/Navbar/header";
 
 import * as IoIcons from "react-icons/io";
-
+import { FaUserFriends } from "react-icons/fa";
 import styles from "./homeindex.module.css";
 function Home({ children }) {
   let icon = <IoIcons.IoMdPeople />;
@@ -16,10 +16,20 @@ function Home({ children }) {
         <div className={styles.wrapp}>
           {/* <Chatclock/> */}
           <div style={{ display: "flex" }}>
+            <FaUserFriends
+              style={{
+                marginLeft: "45%",
+                textAlign: "center",
+                height: "45px",
+                width: "45px",
+                background: "#white",
+                color: "black",
+              }}
+            />
             <div
               style={{
                 // marginLeft: "244px",
-                marginLeft: "65%",
+                marginLeft: "20%",
                 textAlign: "center",
                 height: "45px",
                 width: "45px",
@@ -31,24 +41,22 @@ function Home({ children }) {
               <b style={{ fontSize: "30px" }}>5</b>
             </div>
           </div>
-          <span
-            style={{ marginLeft: "24px", marginTop: "14px", fontSize: "20px" }}
-          >
-            <b>Meetings Schedule</b>
+          <span style={{ marginLeft: "18%", fontSize: "20px" }}>
+            <b style={{ marginTop: "15%" }}>Meetings Schedule</b>
           </span>
           <div
             style={{
               textAlign: "center",
-              marginLeft: "24px",
-              height: "16%",
+              marginLeft: "6%",
+              height: "17%",
               width: "80%",
               background: "#fff1d6",
-              marginTop: "14px",
-              borderRadius: "10px",
+              marginTop: "5%",
+              borderRadius: "15px",
             }}
           >
             <div>
-              <p style={{ paddingTop: "5px" }}> 8:20 AM - 9:00 AM</p>
+              <p style={{ paddingTop: "10px" }}> 8:20 AM - 9:00 AM</p>
               <p> Meetings Nazmul Hassan</p>
               <img
                 className={styles.meeting}
@@ -76,16 +84,16 @@ function Home({ children }) {
           <div
             style={{
               textAlign: "center",
-              marginLeft: "24px",
-              height: "16%",
+              marginLeft: "6%",
+              height: "17%",
               width: "80%",
               background: "#d1e7ff",
-              marginTop: "14px",
+              marginTop: "5%",
               borderRadius: "15px",
             }}
           >
             <div>
-              <p style={{ paddingTop: "5px" }}> 8:20 AM - 9:00 AM</p>
+              <p style={{ paddingTop: "10px" }}> 10:10 AM - 11:00 AM</p>
               <p> Product Development Team</p>
               <img
                 className={styles.meeting}
@@ -113,8 +121,8 @@ function Home({ children }) {
           <div
             style={{
               textAlign: "center",
-              marginLeft: "24px",
-              height: "16%",
+              marginLeft: "6%",
+              height: "17%",
               width: "80%",
               background: "#ffd8d9",
               marginTop: "5%",
@@ -122,7 +130,7 @@ function Home({ children }) {
             }}
           >
             <div>
-              <p style={{ paddingTop: "5px" }}> 8:20 AM - 9:00 AM</p>
+              <p style={{ paddingTop: "10px" }}> 1:20 PM - 2:00 PM</p>
               <p> Product planning</p>
               <img
                 className={styles.meeting}
@@ -150,16 +158,16 @@ function Home({ children }) {
           <div
             style={{
               textAlign: "center",
-              marginLeft: "24px",
-              height: "16%",
+              marginLeft: "6%",
+              height: "17%",
               width: "80%",
               background: "#d9ffe5",
-              marginTop: "14px",
+              marginTop: "5%",
               borderRadius: "15px",
             }}
           >
             <div>
-              <p style={{ paddingTop: "5px" }}> 8:20 AM - 9:00 AM</p>
+              <p style={{ paddingTop: "10px" }}> 3:10 PM - 4:00 PM</p>
               <p> Social Product Review</p>
               <img
                 className={styles.meeting}
@@ -184,9 +192,6 @@ function Home({ children }) {
               />
             </div>
           </div>
-
-          {/* <Chat/>
-          <Clock/> */}
         </div>
       </div>
     </div>

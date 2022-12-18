@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import "./Navbar.css";
 import { IconContext } from "react-icons";
+import { BsThreeDots } from "react-icons/bs";
 
 import { Link } from "react-router-dom";
 
@@ -96,14 +97,54 @@ const header = () => {
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul>
-            <li className="navbar-toggle"></li>
+            <div>
+              <div style={{ display: "flex", padding: 20 }}>
+                {/* <div
+                  style={{
+                    width: 15,
+                    height: 15,
+                    borderRadius: "50%",
+                    backgroundColor: "red",
+                    margin: 5,
+                  }}
+                ></div>
+                <div
+                  style={{
+                    width: 15,
+                    height: 15,
+                    borderRadius: "50%",
+                    backgroundColor: "yellow",
+                    margin: 5,
+                  }}
+                ></div>
+                <div
+                  style={{
+                    width: 15,
+                    height: 15,
+                    borderRadius: "50%",
+                    backgroundColor: "green",
+                    margin: 5,
+                  }}
+                ></div> */}
+                <BsThreeDots
+                  style={{ color: "#D8D8E6", fontSize: 25, marginLeft: 100 }}
+                />
+              </div>
+              {/* <div style={{ height: "50" }}>
+                <BsThreeDots style={{ color: "red" }} />
+              </div> */}
+            </div>
+            {/* <li className="navbar-toggle"></li> */}
 
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
                   <Link to={item.path}>
                     <div>
-                      {item.icon}
+                      <span style={{ backgroundColor: "black" }}>
+                        {item.icon}
+                      </span>
+
                       <span>{item.title}</span>
                     </div>
                   </Link>

@@ -65,10 +65,18 @@ function TRANG2({ Data2 }) {
           <>
             <div style={{ fontSize: "12px" }}>
               {/* onClick={() => { handleViewShoww();setId(row._id) }} */}
-              <Button size="sm" variant="primary">
+              <Button
+                size="sm"
+                variant="primary"
+                style={{
+                  backgroundColor: "#E2FAF4",
+                  color: "#42A58F",
+                  borderRadius: 20,
+                }}
+              >
                 {row.level}
               </Button>
-              ,
+
               {/* <Button size='sm' variant='warning' onClick={()=> {handleEditShow(SetRowData(row),setsdt(row.sdt),sethoten(row.hoten),setId(row._id))}}>Edit</Button>|,
                 <Button size='sm' variant='danger' onClick={() => {handleViewShow(SetRowData(row),setId(row._id), setDelete(true))}}>Delete</Button>|,
                 <Button size='sm' variant='warning' onClick={()=> {handleMoveShow(SetRowData(row),setId(row._id),setsdt(row.sdt),sethoten(row.hoten),setidtb(row._id))}}>Move-To</Button>| */}
@@ -84,6 +92,12 @@ function TRANG2({ Data2 }) {
           <>
             <div style={{ fontSize: "12px" }}>
               <Button
+                style={{
+                  backgroundColor: "#EBE8FD",
+                  color: "#5C42C3",
+                  borderRadius: 20,
+                  borderColor: "#5C42C3",
+                }}
                 size="sm"
                 variant="danger"
                 onClick={() => {
@@ -103,7 +117,12 @@ function TRANG2({ Data2 }) {
 
               <Button
                 size="sm"
-                style={{ marginLeft: 25 }}
+                style={{
+                  margin: 18,
+                  backgroundColor: "#FFE7EB",
+                  color: "#BD4452",
+                  borderRadius: 20,
+                }}
                 variant="danger"
                 onClick={() => {
                   handleDeleteShow(

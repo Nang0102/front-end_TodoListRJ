@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./DangNhap.module.css";
-import images from "../images/Final_logo.png";
+// import images from "../images/Final_logo.png";
 import { useNavigate } from "react-router-dom";
 
 function DangNhap() {
@@ -54,16 +54,26 @@ function DangNhap() {
   };
   return (
     <div className={styles.container}>
-      <form>
+      <form style={{ width: "20%", color: "red" }}>
         <div className={styles.formInner}>
-          <h2>Đăng Nhập</h2>
+          {/* <div style={{ display: "flex" }}> */}
+          <img
+            className={styles.images}
+            src="https://static.ybox.vn/2020/9/4/1600941241699-1594126270885-1577762085284-1571027713600-logo%20techkids%20moi%207%20(1)-05%20(1).png"
+            alt="images"
+          />
+          <h2 className={styles.title}>Đăng Nhập</h2>
+
+          {/* </div> */}
 
           <div className={styles.formGroup}>
-            <label htmlFor="name">Tên email</label>
+            <label style={{ marginTop: "10px" }}>Tên email</label>
             <input type="text" name="name" id="name" onChange={onchangename} />
           </div>
           <div className={styles.formGroup}>
-            <label htmlFor="password">Mật khẩu</label>
+            <label htmlFor="password" style={{ marginTop: "10px" }}>
+              Mật khẩu
+            </label>
             <input
               type="password"
               name="password"
@@ -71,25 +81,28 @@ function DangNhap() {
               onChange={onchangepassword}
             />
           </div>
-          <input onClick={submitform} type="submit" value="Đăng Nhập " />
-          <input
-            style={{ marginLeft: "6px" }}
-            onClick={() => {
-              navigate(`/DangKy`);
-            }}
-            type="submit"
-            value="Đăng Ký "
-          />
+          <div style={{ textAlign: "center", display: "flex" }}>
+            <input onClick={submitform} type="submit" value="Đăng Nhập " />
+            <input
+              style={{ marginLeft: "6px" }}
+              onClick={() => {
+                navigate(`/DangKy`);
+              }}
+              type="submit"
+              value="Đăng Ký "
+            />
+          </div>
         </div>
 
-        <div className={styles.images}>
+        {/* <div className={styles.images}>
           <img
             src={images}
+            src="https://static.ybox.vn/2020/9/4/1600941241699-1594126270885-1577762085284-1571027713600-logo%20techkids%20moi%207%20(1)-05%20(1).png"
             alt="images"
-            style={{ width: "150px", height: "150px" }}
+            style={{ width: "100px", height: "100px" }}
           />
           <h2>APP ToDo By Team 1</h2>
-        </div>
+        </div> */}
       </form>
 
       {/* <div>

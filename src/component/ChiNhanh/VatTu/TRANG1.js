@@ -8,6 +8,7 @@ import DataTable from "react-data-table-component";
 
 import axios from "axios";
 function TRANG1({ Data1 }) {
+  setTimeout(function () {}, 10000);
   var idddd = localStorage.getItem("Idchu");
   const [TimKiem, setTimKiem] = useState("");
   const [loading, setLoading] = useState(false);
@@ -70,7 +71,15 @@ function TRANG1({ Data1 }) {
         return (
           <>
             <div style={{ fontSize: "12px" }}>
-              <Button size="sm" variant="primary">
+              <Button
+                size="sm"
+                variant="primary"
+                style={{
+                  backgroundColor: "#E2FAF4",
+                  color: "#42A58F",
+                  borderRadius: 20,
+                }}
+              >
                 {row.level}
               </Button>
             </div>
@@ -85,6 +94,12 @@ function TRANG1({ Data1 }) {
           <>
             <div style={{ fontSize: "12px" }}>
               <Button
+                style={{
+                  backgroundColor: "#EBE8FD",
+                  color: "#5C42C3",
+                  borderRadius: 20,
+                  borderColor: "#5C42C3",
+                }}
                 size="sm"
                 variant="danger"
                 onClick={() => {
@@ -103,7 +118,12 @@ function TRANG1({ Data1 }) {
               </Button>
 
               <Button
-                style={{ marginLeft: 25 }}
+                style={{
+                  margin: 18,
+                  backgroundColor: "#FFE7EB",
+                  color: "#BD4452",
+                  borderRadius: 20,
+                }}
                 size="sm"
                 variant="danger"
                 onClick={() => {
@@ -126,7 +146,6 @@ function TRANG1({ Data1 }) {
       },
     },
   ];
-
 
   const handleSubmite = () => {
     const url = "https://backendtodolist.onrender.com/Task";
@@ -199,14 +218,20 @@ function TRANG1({ Data1 }) {
         data={Data1}
         progressPending={loading}
         fixedHeader
-        fixedHeaderScrollHeight="400px"
+        fixedHeaderScrollHeight="50%"
         highlightOnHover
         pagination
       />
 
       <Button
+        style={{
+          backgroundColor: "#EBE8FD",
+          color: "#5C42C3",
+          borderColor: "#5C42C3",
+          borderRadius: 20,
+        }}
         size="sm"
-        variant="warning"
+        // variant="warning"
         onClick={() => {
           handleaddShow();
         }}
@@ -279,6 +304,12 @@ function TRANG1({ Data1 }) {
               </div>
 
               <Button
+                style={{
+                  backgroundColor: "#EBE8FD",
+                  color: "#5C42C3",
+                  borderRadius: 20,
+                  borderColor: "#5C42C3",
+                }}
                 type="submit"
                 className="btn btn-warning mt-4"
                 onClick={handleEdit}
@@ -311,6 +342,13 @@ function TRANG1({ Data1 }) {
               <h2>ARE YOU SURE</h2>
 
               <Button
+                style={{
+                  margin: 18,
+                  backgroundColor: "#FFE7EB",
+                  color: "#BD4452",
+                  borderRadius: 20,
+                  borderColor: "#BD4452",
+                }}
                 type="submit"
                 className="btn btn-warning mt-4"
                 onClick={handleDelete}
@@ -379,8 +417,9 @@ function TRANG1({ Data1 }) {
               </div>
 
               <Button
+                style={{ backgroundColor: "#613DE6" }}
                 type="submit"
-                className="btn btn-warning mt-4"
+                className="btn mt-4"
                 onClick={handleSubmite}
               >
                 CREATE Task

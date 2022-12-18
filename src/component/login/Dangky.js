@@ -98,9 +98,14 @@ function DangKy() {
   return (
     <div className={styles.container}>
       {/* <img src={images} alt='images'/> */}
-      <form>
+      <form style={{ width: "30%" }}>
         <div className={styles.formInner}>
-          <h2>Tạo Tài Khoản</h2>
+          <img
+            className={styles.images}
+            src="https://static.ybox.vn/2020/9/4/1600941241699-1594126270885-1577762085284-1571027713600-logo%20techkids%20moi%207%20(1)-05%20(1).png"
+            alt="images"
+          />
+          <h2 className={styles.title}>Tạo Tài Khoản</h2>
 
           <div className={styles.formGroup}>
             <label htmlFor="name">Tên đăng nhập</label>
@@ -123,7 +128,7 @@ function DangKy() {
           </div>
 
           <div className={styles.formGroup}>
-            <label htmlFor="name">email</label>
+            <label htmlFor="name">Email</label>
             <input
               type="text"
               name="name"
@@ -143,7 +148,7 @@ function DangKy() {
           </div>
 
           <div className={styles.formGroup}>
-            <label htmlFor="name">profession</label>
+            <label htmlFor="name">Profession</label>
             <input
               type="text"
               name="name"
@@ -152,17 +157,22 @@ function DangKy() {
             />
           </div>
 
-          <input onClick={handleSubmite} type="submit" value="Tạo Tài Khoản" />
+          <input
+            style={{ textAlign: "center" }}
+            onClick={handleSubmite}
+            type="submit"
+            value="Tạo Tài Khoản"
+          />
         </div>
 
-        <div className={styles.images}>
+        {/* <div className={styles.images}>
           <img
             src={images}
             alt="images"
             style={{ width: "150px", height: "150px" }}
           />
           <h2>APP ToDo By Team 1</h2>
-        </div>
+        </div> */}
       </form>
     </div>
   );

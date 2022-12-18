@@ -19,17 +19,20 @@ function Username() {
   };
 
   const handleEdit = () => {
-    console.log("handle edit dkf", id);
+    // console.log("handle edit dkf", id);
 
     const url = `https://backendtodolist.onrender.com/user/${id}`;
-    // const url = `http://localhost:5000/user/${id}`;
+    // const url = `http://localhost:5000/user`;
 
     const Credentials = { username, email, avatar };
     axios
       .put(url, Credentials)
       .then((response) => {
         const result = response.data;
+        if (result.avatar) {
+        }
         const { status, message } = result;
+        console.log("result", result);
         if (status !== "SUCCESS") {
           alert(message, status);
         } else {
@@ -52,12 +55,12 @@ function Username() {
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [avatar, setAvatar] = useState("");
+  const [avatar, setAvatar] = useState();
   const [id, setId] = useState("");
 
   const GetUser = async () => {
-    const url = `https://backendtodolist.onrender.com/user/${id}`;
-    // const url = `http://localhost:5000/user${id}`;
+    const url = `https://backendtodolist.onrender.com/user/abc${id}`;
+    // const url = `http://localhost:5000/user/abc`;
     setLoading(true);
 
     axios
@@ -68,8 +71,6 @@ function Username() {
         const result = response.data;
         setData(result);
         setLoading(false);
-        console.log("setData", setData);
-        console.log("setLoading", setLoading);
       })
       .catch((err) => {
         console.log(err);
@@ -83,13 +84,12 @@ function Username() {
 
   const handleDelete = () => {
     const url = `https://backendtodolist.onrender.com/user/${id}`;
-    // const url = `http://localhost:5000/user${id}`;
+    // const url = `http://localhost:5000/user`;
 
     axios
       .delete(url)
       .then((response) => {
         const result = response.data;
-        console.log("ress", result);
         alert(result);
       })
       .catch((err) => {
@@ -107,8 +107,20 @@ function Username() {
     },
     {
       name: <div style={{ fontSize: "20px" }}>Avatar</div>,
-      selector: (row) => row.avatar,
+      // selector: (row) => row.avatar,
+      selector: (row) => (
+        <img
+          style={{ height: 50, width: 50, borderRadius: "50%" }}
+          src={row.avatar}
+          alt=""
+        />
+      ),
     },
+
+    // {
+    //   name: <div style={{ fontSize: "20px" }}>Groups</div>,
+    //   selector: (row) => row.groupid,
+    // },
 
     {
       name: <div style={{ fontSize: "20px" }}>Actions </div>,
@@ -117,6 +129,12 @@ function Username() {
         return (
           <div style={{ fontSize: "12px" }}>
             <Button
+              style={{
+                backgroundColor: "#EBE8FD",
+                color: "#5C42C3",
+                borderRadius: 20,
+                borderColor: "#5C42C3",
+              }}
               size="sm"
               variant="danger"
               onClick={() => {
@@ -132,7 +150,13 @@ function Username() {
               View
             </Button>
             <Button
-              style={{ margin: 25 }}
+              style={{
+                margin: 18,
+                backgroundColor: "#FFE7EB",
+                color: "#BD4452",
+                borderRadius: 20,
+                borderColor: "#BD4452",
+              }}
               onClick={() => {
                 handleDeleteShow(
                   setRowData(row),
@@ -156,11 +180,12 @@ function Username() {
       <h1>User</h1>
 
       <DataTable
+        style={{ padding: 15 }}
         columns={columns}
         data={Data}
         progressPending={loading}
         fixedHeader
-        fixedHeaderScrollHeight="500px"
+        fixedHeaderScrollHeight="800px"
         highlightOnHover
         pagination
       />
@@ -200,14 +225,22 @@ function Username() {
               <div className="form-group mt-3">
                 <label>Avatar</label>
                 <input
+                  type="file"
+                  accept="image/*"
                   className="form-control"
-                  onChange={(e) => setAvatar(e.target.value)}
+                  onChange={(e) => setAvatar(e.target.files[0])}
                   placeholder="Please Enter..."
-                  defaultValue={avatar}
+                  // defaultValue={avatar}
                 />
               </div>
 
               <Button
+                style={{
+                  backgroundColor: "#EBE8FD",
+                  color: "#5C42C3",
+                  borderRadius: 20,
+                  borderColor: "#5C42C3",
+                }}
                 type="submit"
                 className="btn btn-warning mt-4"
                 onClick={handleEdit}
@@ -238,6 +271,13 @@ function Username() {
               <h2>ARE YOU SURE</h2>
 
               <Button
+                style={{
+                  margin: 18,
+                  backgroundColor: "#FFE7EB",
+                  color: "#BD4452",
+                  borderRadius: 20,
+                  borderColor: "#BD4452",
+                }}
                 type="submit"
                 className="btn btn-warning mt-4"
                 onClick={handleDelete}

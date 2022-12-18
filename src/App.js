@@ -14,6 +14,7 @@ import VatTu from "./component/ChiNhanh/VatTu/VatTu";
 // import User from "./features/ChiNhanh/User/User";
 import Username from "./component/ChiNhanh/User/username";
 // import TRANG1 from "./component/ChiNhanh/VatTu/TRANG1";
+import Avatar from "./component/ChiNhanh/User/avatar";
 
 function App() {
   return (
@@ -43,6 +44,14 @@ function App() {
         element={
           <Home>
             <Username />
+          </Home>
+        }
+      ></Route>
+      <Route
+        path="/Avatar"
+        element={
+          <Home>
+            <Avatar />
           </Home>
         }
       ></Route>
