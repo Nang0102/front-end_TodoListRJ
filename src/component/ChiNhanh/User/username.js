@@ -47,8 +47,12 @@ function Username() {
 
     if ((Credentials = { avatar })) {
       console.log("Credentials", Credentials);
+      const formData = new FormData();
+
+      formData.append("avatar", avatar);
+
       axios
-        .put(`${url}/upload/${id}`, Credentials)
+        .put(`${url}/upload/${id}`, Credentials, formData)
         .then((response) => {
           const result = response.data;
           const { status, message } = result;
