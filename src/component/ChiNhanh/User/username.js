@@ -28,7 +28,7 @@ function Username() {
       console.log("Credentials", Credentials);
 
       axios
-        .put(url, Credentials)
+        .put(`${url}/${id}`, Credentials)
         .then((response) => {
           const result = response.data;
           const { status, message } = result;
@@ -50,19 +50,15 @@ function Username() {
       const formData = new FormData();
 
       formData.append("avatar", avatar);
+      console.log("formData", formData);
 
       axios
-        .put(`${url}/upload/${id}`, Credentials, formData)
+        .put(`${url}/upload/${id}`, formData)
         .then((response) => {
           const result = response.data;
-          const { status, message } = result;
           console.log("result", result);
-          if (status !== "SUCCESS") {
-            alert(message, status);
-          } else {
-            alert(message);
-            window.location.reload();
-          }
+
+          setData(result);
         })
         .catch((err) => {
           console.log(err);
