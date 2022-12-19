@@ -59,7 +59,7 @@ function Username() {
   const [id, setId] = useState("");
 
   const GetUser = async () => {
-    const url = `https://backendtodolist.onrender.com/user/abc${id}`;
+    const url = `https://backendtodolist.onrender.com/user/${id}`;
     // const url = `http://localhost:5000/user/abc`;
     setLoading(true);
 
