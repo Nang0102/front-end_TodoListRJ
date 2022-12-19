@@ -21,7 +21,7 @@ function Username() {
   const handleEdit = () => {
     // console.log("handle edit dkf", id);
 
-    const url = `https://backendtodolist.onrender.com/user/${id}`;
+    const url = `https://backendtodolist.onrender.com/user`;
     // const url = `http://localhost:5000/user`;
     let Credentials;
     if ((Credentials = { username, email })) {
