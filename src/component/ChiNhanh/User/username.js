@@ -23,26 +23,62 @@ function Username() {
 
     const url = `https://backendtodolist.onrender.com/user/${id}`;
     // const url = `http://localhost:5000/user`;
+    let Credentials;
+    if ((Credentials = { username, email })) {
+      axios
+        .put(url, Credentials)
+        .then((response) => {
+          const result = response.data;
+          const { status, message } = result;
+          console.log("result", result);
+          if (status !== "SUCCESS") {
+            alert(message, status);
+          } else {
+            alert(message);
+            window.location.reload();
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else if ((Credentials = { avatar })) {
+      axios
+        .put(`${url}/upload/:id`, Credentials)
+        .then((response) => {
+          const result = response.data;
+          const { status, message } = result;
+          console.log("result", result);
+          if (status !== "SUCCESS") {
+            alert(message, status);
+          } else {
+            alert(message);
+            window.location.reload();
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
 
-    const Credentials = { username, email, avatar };
-    axios
-      .put(url, Credentials)
-      .then((response) => {
-        const result = response.data;
-        if (result.avatar) {
-        }
-        const { status, message } = result;
-        console.log("result", result);
-        if (status !== "SUCCESS") {
-          alert(message, status);
-        } else {
-          alert(message);
-          window.location.reload();
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // const Credentials = { username, email};
+    // axios
+    //   .put(url, Credentials)
+    //   .then((response) => {
+    //     const result = response.data;
+    //     if (result.avatar) {
+    //     }
+    //     const { status, message } = result;
+    //     console.log("result", result);
+    //     if (status !== "SUCCESS") {
+    //       alert(message, status);
+    //     } else {
+    //       alert(message);
+    //       window.location.reload();
+    //     }
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
   };
 
   const [ViewDelete, setDeleteShow] = useState(false);
