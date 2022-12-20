@@ -1,7 +1,9 @@
 import { React, useState } from "react";
 import styles from "./DangNhap.module.css";
-import images from "../images/Final_logo.png";
+// import images from "../images/Final_logo.png";
 import axios from "axios";
+import moment from "moment";
+
 // import images from '../../images/background.jpg'
 import { useNavigate } from "react-router-dom";
 function DangKy() {
@@ -140,10 +142,11 @@ function DangKy() {
           <div className={styles.formGroup}>
             <label htmlFor="name">Date of Birth</label>
             <input
-              type="text"
+              type="date"
               name="name"
               id="name"
               onChange={(e) => setDateOfBirth(e.target.value)}
+              defaultValue={moment(DateOfBirth).format("YYYY-MM-DD")}
             />
           </div>
 

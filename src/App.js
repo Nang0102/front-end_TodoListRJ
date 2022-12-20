@@ -47,14 +47,14 @@ function App() {
           </Home>
         }
       ></Route>
-      <Route
+      {/* <Route
         path="/Avatar"
         element={
           <Home>
             <Avatar />
           </Home>
         }
-      ></Route>
+      ></Route> */}
 
       <Route path="/DangKyChu" element={<DangKyChu />}></Route>
     </Routes>

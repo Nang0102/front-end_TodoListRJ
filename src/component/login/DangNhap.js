@@ -50,7 +50,7 @@ function DangNhap() {
       localStorage.setItem("Idchu", val._id);
       console.log("Idchu", val._id);
     });
-    console.log("danhap", response.json());
+    // console.log("danhap", response.json());
   };
   return (
     <div className={styles.container}>

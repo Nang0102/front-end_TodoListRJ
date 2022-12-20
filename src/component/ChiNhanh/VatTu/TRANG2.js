@@ -152,7 +152,7 @@ function TRANG2({ Data2 }) {
   }
 
   const handleEdit = () => {
-    const url = `http://localhost:5001/Task/${idd}`;
+    const url = `https://frontend-web-todorj123.onrender.com/Task/${idd}`;
 
     const Credentials = { title, complete, level, description, enddate };
     axios
@@ -172,7 +172,7 @@ function TRANG2({ Data2 }) {
       });
   };
   const handleDelete = () => {
-    const url = `http://localhost:5001/Task/${idd}`;
+    const url = `https://frontend-web-todorj123.onrender.com/Task/${idd}`;
     axios
       .delete(url)
       .then((response) => {

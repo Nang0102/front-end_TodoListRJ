@@ -1,3 +1,5 @@
+/* eslint-disable no-const-assign */
+/* eslint-disable no-cond-assign */
 import React from "react";
 import { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
@@ -73,30 +75,49 @@ function Username() {
   const hanldeDeleteClose = () => {
     setDeleteShow(false);
   };
+  const avatarDefault =
+    "https://images.pexels.com/photos/14213816/pexels-photo-14213816.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load";
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [avatar, setAvatar] = useState();
+  const [avatar, setAvatar] = useState(avatarDefault);
   const [id, setId] = useState("");
 
   const GetUser = async () => {
-    const url = `https://backendtodolist.onrender.com/user/${id}`;
+    let url;
     // const url = `http://localhost:5000/user/abc`;
     setLoading(true);
+    if ((url = `https://backendtodolist.onrender.com/user`)) {
+      axios
 
-    axios
+        .get(`${url}/${id}`)
 
-      .get(url)
+        .then((response) => {
+          const result = response.data;
+          console.log(result);
+          setData(result);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false);
+        });
+    }
+    if ((url = `https://backendtodolist.onrender.com/user/avatar`)) {
+      axios
 
-      .then((response) => {
-        const result = response.data;
-        setData(result);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        setLoading(false);
-      });
+        .get(`${url}/${id}`)
+
+        .then((response) => {
+          const result = response.data;
+          setData(result);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false);
+        });
+    }
   };
 
   useEffect(() => {
@@ -104,18 +125,49 @@ function Username() {
   }, []);
 
   const handleDelete = () => {
-    const url = `https://backendtodolist.onrender.com/user/${id}`;
+    // const url = `https://backendtodolist.onrender.com/user`;
     // const url = `http://localhost:5000/user`;
+    // axios
+    //   .delete(`${url}/avatar/${id}`)
+    //   .then((response) => {
+    //     const result = response.data;
+    //     alert(result);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+    let url;
+    if ((url = `https://backendtodolist.onrender.com/user/${id}`)) {
+      axios
 
-    axios
-      .delete(url)
-      .then((response) => {
-        const result = response.data;
-        alert(result);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        .delete(url)
+
+        .then((response) => {
+          const result = response.data;
+          console.log(result);
+          setData(result);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false);
+        });
+    }
+    if ((url = `https://backendtodolist.onrender.com/user/avatar/${id}`)) {
+      axios
+
+        .delete(`${url}`)
+
+        .then((response) => {
+          const result = response.data;
+          setData(result);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false);
+        });
+    }
   };
   const columns = [
     {
@@ -133,6 +185,11 @@ function Username() {
         <img
           style={{ height: 50, width: 50, borderRadius: "50%" }}
           src={row.avatar}
+          onError={(event) => {
+            event.target.src =
+              "https://thumbs.dreamstime.com/b/profile-anonymous-face-icon-gray-silhouette-person-male-default-avatar-photo-placeholder-isolated-white-background-profile-107327860.jpg";
+            event.onerror = null;
+          }}
           alt=""
         />
       ),

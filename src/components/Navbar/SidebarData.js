@@ -14,7 +14,7 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "Group",
+    title: "User",
     path: "/User",
     icon: <IoIcons.IoMdPeople />,
     cName: "nav-text",
@@ -26,7 +26,7 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "User",
+    title: "Group",
     path: "/User",
     icon: <IoIcons.IoMdPeople />,
     // icon: <BsPersonSquare />,
@@ -34,8 +34,8 @@ export const SidebarData = [
   },
   {
     title: "Anytime",
-    // path: "/VatTu",
-    path: "/Avatar",
+    path: "/VatTu",
+    // path: "/Avatar",
     icon: <AiIcons.AiFillDollarCircle />,
     cName: "nav-text",
   },
