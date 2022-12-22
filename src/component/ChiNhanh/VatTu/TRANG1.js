@@ -314,7 +314,7 @@ function TRANG1({ Data1 }) {
                 className="btn btn-warning mt-4"
                 onClick={handleEdit}
               >
-                Eddit Task
+                Edit Task
               </Button>
             </div>
           </Modal.Body>
@@ -374,7 +374,7 @@ function TRANG1({ Data1 }) {
           keyboard={false}
         >
           <Modal.Header closeButton>
-            <Modal.Title>CREATE TASK</Modal.Title>
+            <Modal.Title>Create Task</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div>
@@ -422,7 +422,7 @@ function TRANG1({ Data1 }) {
                 className="btn mt-4"
                 onClick={handleSubmite}
               >
-                CREATE Task
+                Create Task
               </Button>
             </div>
           </Modal.Body>

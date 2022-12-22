@@ -1,24 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-import { Button, Modal } from "react-bootstrap";
-// import Pagination from "./pagination";
-
 const Avatar = () => {
   const [posts, setPosts] = useState([]);
   const [avatar, setAvatar] = useState();
   const [titleInputValue, setTitleInputValue] = useState("");
   localStorage.getItem("post");
-  // const [pagination, setPagination] = useState({
-  //   page: 1,
-  //   limit: 10,
-  //   totalRows: 21,
-  // });
-
-  // const [filter, setFilter] = useState({
-  //   limit: 10,
-  //   page: 1,
-  // });
 
   const params = {};
 
@@ -29,56 +16,19 @@ const Avatar = () => {
     const getPosts = async () => {
       const { data: res } = await axios.get(url, params);
       setPosts(res);
-      // setPagination(pagination);
     };
     getPosts();
   }, []);
-
-  // function handlepageChange(newPage) {
-  //   console.log("New Page:", newPage);
-  //   setFilter({
-  //     ...filter,
-  //     page: newPage,
-  //   });
-  // }
 
   const handleInput = (e) => {
     setTitleInputValue(e.target.files[0]);
   };
 
-  // const addPost = async () => {
-  //   const post = { avatar: titleInputValue };
-  //   await axios.post(url, post);
-  //   setPosts([post, ...posts]);
-  //   setTitleInputValue("");
-  // };
   const addPost = async () => {
     const post = { avatar };
     await axios.post(`${url}/upload`, post);
-    // const result = response.data
     setPosts([post, ...posts]);
   };
-  // const handleSubmite = () => {
-  //   const url = "https://backendtodolist.onrender.com/Task";
-  //   let userId = idddd;
-
-  //   const Credentials = { title, level, description, enddate, userId };
-  //   axios
-  //     .post(url, Credentials)
-  //     .then((response) => {
-  //       const result = response.data;
-  //       const { status, message } = result;
-  //       if (status !== "SUCCESS") {
-  //         alert(message, status);
-  //       } else {
-  //         alert(message);
-  //         window.location.reload();
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
 
   const handleUpdate = async (post) => {
     const updatePosts = [...posts];
@@ -126,7 +76,6 @@ const Avatar = () => {
           <tbody>
             {posts.map((post, index) => (
               <tr key={index}>
-                {/* <td> {post.avatar} </td> */}
                 <img
                   src={post.avatar}
                   alt=""
@@ -142,7 +91,6 @@ const Avatar = () => {
                       borderColor: "#5C42C3",
                     }}
                     onClick={() => handleUpdate(post)}
-                    // className="btn btn-info btn-sm"
                     className="btn btn-info btn-sm"
                     value={titleInputValue}
                   >
@@ -159,7 +107,6 @@ const Avatar = () => {
                       borderColor: "#BD4452",
                     }}
                     onClick={() => handleDelete(post)}
-                    // className="btn btn-danger btn-sm"
                     className="btn btn-danger btn-sm"
                   >
                     Delete
@@ -167,10 +114,6 @@ const Avatar = () => {
                 </td>
               </tr>
             ))}
-            {/* <Pagination
-              pagination={pagination}
-              onPageChange={handlepageChange}
-            /> */}
           </tbody>
         </table>
       </div>

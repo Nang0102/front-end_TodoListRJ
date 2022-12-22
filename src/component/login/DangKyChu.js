@@ -77,10 +77,10 @@ function DangKyChu() {
       {/* <img src={images} alt='images'/> */}
       <form>
         <div className={styles.formInner}>
-          <h2>Tạo Tài Khoản</h2>
+          <h2>Sign up to your account</h2>
 
           <div className={styles.formGroup}>
-            <label htmlFor="name">Tên đăng nhập</label>
+            <label htmlFor="name">Your name</label>
             <input
               type="text"
               name="name"
@@ -90,7 +90,7 @@ function DangKyChu() {
           </div>
 
           <div className={styles.formGroup}>
-            <label htmlFor="password">Mật khẩu</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               name="password"

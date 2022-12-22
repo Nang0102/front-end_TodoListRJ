@@ -54,25 +54,29 @@ function DangNhap() {
   };
   return (
     <div className={styles.container}>
-      <form style={{ width: "20%", color: "red" }}>
+      {/* <div className={styles.Frame}></div>
+      <div className={styles.leftFrame}></div>
+      <div className={styles.rightFrame}></div> */}
+      <form style={{ width: "25%", height: "60%" }}>
         <div className={styles.formInner}>
           {/* <div style={{ display: "flex" }}> */}
-          <img
+          {/* <img
             className={styles.images}
             src="https://static.ybox.vn/2020/9/4/1600941241699-1594126270885-1577762085284-1571027713600-logo%20techkids%20moi%207%20(1)-05%20(1).png"
             alt="images"
-          />
-          <h2 className={styles.title}>Đăng Nhập</h2>
+          /> */}
+          <div className={styles.sideTitle}>Welcome back! 👋</div>
+          <h2 className={styles.title}>Sign in to your account</h2>
 
           {/* </div> */}
 
           <div className={styles.formGroup}>
-            <label style={{ marginTop: "10px" }}>Tên email</label>
+            <label style={{ marginTop: "10px" }}>Your email</label>
             <input type="text" name="name" id="name" onChange={onchangename} />
           </div>
           <div className={styles.formGroup}>
             <label htmlFor="password" style={{ marginTop: "10px" }}>
-              Mật khẩu
+              Password
             </label>
             <input
               type="password"
@@ -82,14 +86,35 @@ function DangNhap() {
             />
           </div>
           <div style={{ textAlign: "center", display: "flex" }}>
-            <input onClick={submitform} type="submit" value="Đăng Nhập " />
             <input
-              style={{ marginLeft: "6px" }}
+              style={{ width: "88%" }}
+              onClick={submitform}
+              type="submit"
+              value="Login "
+            />
+          </div>
+          <div style={{ display: "flex", marginLeft: "15px", marginTop: 20 }}>
+            <input
+              style={{
+                fontSize: 16,
+                color: "black",
+                backgroundColor: "white",
+                fontFamily: "Mulish",
+              }}
+              placeholder="Don't have an account?  "
+            />{" "}
+            <input
+              style={{
+                fontSize: 15,
+                color: "#625BF7",
+                backgroundColor: "white",
+                fontFamily: "Mulish",
+              }}
               onClick={() => {
                 navigate(`/DangKy`);
               }}
               type="submit"
-              value="Đăng Ký "
+              value="Sign up "
             />
           </div>
         </div>

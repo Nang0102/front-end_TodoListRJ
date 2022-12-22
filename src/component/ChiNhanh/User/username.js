@@ -10,7 +10,7 @@ function Username() {
   const [Data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [RowData, setRowData] = useState([]);
-  // var id = localStorage.getItem("Idchu");
+  window.localStorage.getItem("Data");
 
   const [ViewEdit, SetEditShow] = useState(false);
   const handleEditShow = () => {
@@ -94,7 +94,6 @@ function Username() {
 
         .then((response) => {
           const result = response.data;
-          console.log(result);
           setData(result);
           setLoading(false);
         })
@@ -118,6 +117,22 @@ function Username() {
           setLoading(false);
         });
     }
+    if ((url = `https://backendtodolist.onrender.com/todo/statistic`)) {
+      axios
+
+        .get(`${url}/${id}`)
+
+        .then((response) => {
+          const result = response.data;
+          console.log("resStatistic", result);
+          setData(result);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false);
+        });
+    }
   };
 
   useEffect(() => {
@@ -125,17 +140,6 @@ function Username() {
   }, []);
 
   const handleDelete = () => {
-    // const url = `https://backendtodolist.onrender.com/user`;
-    // const url = `http://localhost:5000/user`;
-    // axios
-    //   .delete(`${url}/avatar/${id}`)
-    //   .then((response) => {
-    //     const result = response.data;
-    //     alert(result);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
     let url;
     if ((url = `https://backendtodolist.onrender.com/user/${id}`)) {
       axios
@@ -180,7 +184,6 @@ function Username() {
     },
     {
       name: <div style={{ fontSize: "20px" }}>Avatar</div>,
-      // selector: (row) => row.avatar,
       selector: (row) => (
         <img
           style={{ height: 50, width: 50, borderRadius: "50%" }}
@@ -193,6 +196,16 @@ function Username() {
           alt=""
         />
       ),
+    },
+    {
+      name: <div style={{ fontSize: "20px" }}>Statistic</div>,
+      cell: (row) => {
+        return (
+          <div>
+            <p>statistic</p>
+          </div>
+        );
+      },
     },
 
     // {

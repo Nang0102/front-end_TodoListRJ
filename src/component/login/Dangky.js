@@ -100,17 +100,19 @@ function DangKy() {
   return (
     <div className={styles.container}>
       {/* <img src={images} alt='images'/> */}
-      <form style={{ width: "30%" }}>
+      <form style={{ width: "30%", height: "fitContent" }}>
         <div className={styles.formInner}>
-          <img
+          {/* <img
             className={styles.images}
             src="https://static.ybox.vn/2020/9/4/1600941241699-1594126270885-1577762085284-1571027713600-logo%20techkids%20moi%207%20(1)-05%20(1).png"
             alt="images"
-          />
-          <h2 className={styles.title}>Tạo Tài Khoản</h2>
+          /> */}
+          <div className={styles.sideTitle}>Welcome to! 👋</div>
+
+          <h2 className={styles.title}>Sign up to your account</h2>
 
           <div className={styles.formGroup}>
-            <label htmlFor="name">Tên đăng nhập</label>
+            <label htmlFor="name">Your name</label>
             <input
               type="text"
               name="name"
@@ -120,7 +122,7 @@ function DangKy() {
           </div>
 
           <div className={styles.formGroup}>
-            <label htmlFor="password">Mật khẩu</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               name="password"
@@ -161,10 +163,10 @@ function DangKy() {
           </div>
 
           <input
-            style={{ textAlign: "center" }}
+            style={{ textAlign: "center", width: "88%", marginBottom: 15 }}
             onClick={handleSubmite}
             type="submit"
-            value="Tạo Tài Khoản"
+            value="Sign up"
           />
         </div>
 
