@@ -8,7 +8,6 @@ import DataTable from "react-data-table-component";
 
 import axios from "axios";
 function TRANG1({ Data1 }) {
-  setTimeout(function () {}, 10000);
   var idddd = localStorage.getItem("Idchu");
   const [TimKiem, setTimKiem] = useState("");
   const [loading, setLoading] = useState(false);
@@ -32,11 +31,10 @@ function TRANG1({ Data1 }) {
 
   //FOr Delete Model
   const [Viewadd, SetaddShow] = useState(false);
-  const handleaddShow = () => {
-    SetaddShow(true);
-  };
+  const handleaddShow = () => {};
   const hanldeaddClose = () => {
     SetaddShow(false);
+    SetaddShow(true);
   };
 
   //define the

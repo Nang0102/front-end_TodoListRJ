@@ -10,7 +10,74 @@ function Username() {
   const [Data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [RowData, setRowData] = useState([]);
-  window.localStorage.getItem("Data");
+  localStorage.getItem("Data");
+
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [avatar, setAvatar] = useState("");
+  const [userId, setUserId] = useState("");
+  const [id, setId] = useState("");
+
+  const GetUser = async () => {
+    let url;
+    // const url = `http://localhost:5000/user/abc`;
+    setLoading(true);
+    if ((url = `https://backendtodolist.onrender.com/user`)) {
+      axios
+
+        .get(`${url}/${id}`)
+
+        .then((response) => {
+          const result = response.data;
+          setData(result);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false);
+        });
+    }
+    // if ((url = `https://backendtodolist.onrender.com/user/avatar`)) {
+    //   axios
+
+    //     .get(`${url}/${id}`)
+
+    //     .then((response) => {
+    //       const result = response.data;
+    //       setData(result);
+    //       setLoading(false);
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //       setLoading(false);
+    //     });
+    // }
+    // if ((url = `https://backendtodolist.onrender.com/todo/statistic`)) {
+    //   if (userId == id) {
+    //     axios
+
+    //       .get(`${url}/${userId}`)
+
+    //       .then((response) => {
+    //         const result = response.data;
+    //         result.map((data) => {
+    //           return (data.statistic = result.push());
+    //         });
+    //         console.log("resStatistic", result);
+    //         setData(result);
+    //         setLoading(false);
+    //       })
+    //       .catch((err) => {
+    //         console.log(err);
+    //         setLoading(false);
+    //       });
+    //   }
+    // }
+  };
+
+  useEffect(() => {
+    GetUser();
+  }, []);
 
   const [ViewEdit, SetEditShow] = useState(false);
   const handleEditShow = () => {
@@ -33,14 +100,7 @@ function Username() {
         .put(`${url}/${id}`, Credentials)
         .then((response) => {
           const result = response.data;
-          const { status, message } = result;
-          console.log("result", result);
-          if (status !== "SUCCESS") {
-            alert(message, status);
-          } else {
-            alert(message);
-            window.location.reload();
-          }
+          console.log("resUser", result);
         })
         .catch((err) => {
           console.log(err);
@@ -53,14 +113,22 @@ function Username() {
 
       formData.append("avatar", avatar);
       console.log("formData", formData);
-
+      // formData
       axios
         .put(`${url}/upload/${id}`, formData)
         .then((response) => {
           const result = response.data;
-          console.log("result", result);
+          console.log("resultAv", result);
 
-          setData(result);
+          window.location.reload();
+          // const { status, message } = result;
+          // console.log("resultAv", result);
+          // if (status !== "SUCCESS") {
+          //   alert(message, status);
+          // } else {
+          //   alert(message);
+          //   window.location.reload();
+          // }
         })
         .catch((err) => {
           console.log(err);
@@ -75,70 +143,6 @@ function Username() {
   const hanldeDeleteClose = () => {
     setDeleteShow(false);
   };
-  const avatarDefault =
-    "https://images.pexels.com/photos/14213816/pexels-photo-14213816.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load";
-
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [avatar, setAvatar] = useState(avatarDefault);
-  const [id, setId] = useState("");
-
-  const GetUser = async () => {
-    let url;
-    // const url = `http://localhost:5000/user/abc`;
-    setLoading(true);
-    if ((url = `https://backendtodolist.onrender.com/user`)) {
-      axios
-
-        .get(`${url}/${id}`)
-
-        .then((response) => {
-          const result = response.data;
-          setData(result);
-          setLoading(false);
-        })
-        .catch((err) => {
-          console.log(err);
-          setLoading(false);
-        });
-    }
-    if ((url = `https://backendtodolist.onrender.com/user/avatar`)) {
-      axios
-
-        .get(`${url}/${id}`)
-
-        .then((response) => {
-          const result = response.data;
-          setData(result);
-          setLoading(false);
-        })
-        .catch((err) => {
-          console.log(err);
-          setLoading(false);
-        });
-    }
-    if ((url = `https://backendtodolist.onrender.com/todo/statistic`)) {
-      axios
-
-        .get(`${url}/${id}`)
-
-        .then((response) => {
-          const result = response.data;
-          console.log("resStatistic", result);
-          setData(result);
-          setLoading(false);
-        })
-        .catch((err) => {
-          console.log(err);
-          setLoading(false);
-        });
-    }
-  };
-
-  useEffect(() => {
-    GetUser();
-  }, []);
-
   const handleDelete = () => {
     let url;
     if ((url = `https://backendtodolist.onrender.com/user/${id}`)) {
@@ -148,23 +152,16 @@ function Username() {
 
         .then((response) => {
           const result = response.data;
-          console.log(result);
-          setData(result);
-          setLoading(false);
-        })
-        .catch((err) => {
-          console.log(err);
-          setLoading(false);
-        });
-    }
-    if ((url = `https://backendtodolist.onrender.com/user/avatar/${id}`)) {
-      axios
+          // setData(result);
+          const { status, message } = result;
 
-        .delete(`${url}`)
-
-        .then((response) => {
-          const result = response.data;
-          setData(result);
+          console.log("delete", result);
+          if (status !== "SUCCESS") {
+            alert(message, status);
+          } else {
+            alert(message);
+            window.location.reload();
+          }
           setLoading(false);
         })
         .catch((err) => {
@@ -197,20 +194,16 @@ function Username() {
         />
       ),
     },
-    {
-      name: <div style={{ fontSize: "20px" }}>Statistic</div>,
-      cell: (row) => {
-        return (
-          <div>
-            <p>statistic</p>
-          </div>
-        );
-      },
-    },
-
     // {
-    //   name: <div style={{ fontSize: "20px" }}>Groups</div>,
-    //   selector: (row) => row.groupid,
+    //   name: <div style={{ fontSize: "20px" }}>Statistic</div>,
+    //   cell: (row) => {
+    //     return (
+    //       <div>
+    //         <p>statistic</p>
+    //         {row.statistic}
+    //       </div>
+    //     );
+    //   },
     // },
 
     {
@@ -234,7 +227,8 @@ function Username() {
                   setId(row._id),
                   setAvatar(row.avatar),
                   setUsername(row.username),
-                  setEmail(row.email)
+                  setEmail(row.email),
+                  setUserId(row.userId)
                 );
               }}
             >
@@ -254,7 +248,8 @@ function Username() {
                   setId(row._id),
                   setAvatar(row.avatar),
                   setUsername(row.username),
-                  setEmail(row.email)
+                  setEmail(row.email),
+                  setUserId(row.userId)
                 );
               }}
             >
