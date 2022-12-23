@@ -80,17 +80,15 @@ function Username() {
         .put(`${url}/upload/${id}`, formData)
         .then((response) => {
           const result = response.data;
-          console.log("resultAv", result);
 
-          window.location.reload();
-          // const { status, message } = result;
-          // console.log("resultAv", result);
-          // if (status !== "SUCCESS") {
-          //   alert(message, status);
-          // } else {
-          //   alert(message);
-          //   window.location.reload();
-          // }
+          const { status, message } = result;
+          console.log("resultAv", result);
+          if (status !== "SUCCESS") {
+            alert(message, status);
+          } else {
+            alert(message);
+            window.location.reload();
+          }
         })
         .catch((err) => {
           console.log(err);
