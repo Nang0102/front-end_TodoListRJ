@@ -63,7 +63,7 @@ function Home({ children }) {
                 style={{
                   marginRight: "10px",
                 }}
-                src="https://images.pexels.com/photos/14720564/pexels-photo-14720564.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                src="https://images.pexels.com/photos/10980885/pexels-photo-10980885.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
                 alt=""
               />
               <img
@@ -100,7 +100,7 @@ function Home({ children }) {
                 style={{
                   marginRight: "10px",
                 }}
-                src="https://images.pexels.com/photos/14720564/pexels-photo-14720564.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                src="https://images.pexels.com/photos/10980885/pexels-photo-10980885.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
                 alt=""
               />
               <img
@@ -137,7 +137,7 @@ function Home({ children }) {
                 style={{
                   marginRight: "10px",
                 }}
-                src="https://images.pexels.com/photos/14720564/pexels-photo-14720564.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                src="https://images.pexels.com/photos/10980885/pexels-photo-10980885.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
                 alt=""
               />
               <img
@@ -145,7 +145,7 @@ function Home({ children }) {
                 style={{
                   marginRight: "10px",
                 }}
-                src="https://images.pexels.com/photos/6530613/pexels-photo-6530613.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                src="https://images.pexels.com/photos/14578996/pexels-photo-14578996.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
                 alt=""
               />
               <img
@@ -174,7 +174,7 @@ function Home({ children }) {
                 style={{
                   marginRight: "10px",
                 }}
-                src="https://images.pexels.com/photos/14720564/pexels-photo-14720564.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                src="https://images.pexels.com/photos/10980885/pexels-photo-10980885.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
                 alt=""
               />
               <img

@@ -1,10 +1,10 @@
 import React from "react";
 
-function TRANG4() {
+function Links() {
   return (
     <>
       <h1>trang 4</h1>
     </>
   );
 }
-export default TRANG4;
+export default Links;

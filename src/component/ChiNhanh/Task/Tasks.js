@@ -7,10 +7,10 @@ import axios from "axios";
 // import * as AiIcons from 'react-icons/ai';
 // import * as IoIcons from 'react-icons/io';
 
-import TRANG1 from "./TRANG1.js";
-import TRANG2 from "./TRANG2.js";
-import TRANG3 from "./TRANG3.js";
-import TRANG4 from "./TRANG4.js";
+import AllTasks from "./AllTasks.js";
+import ImportantTasks from "./ImportantTasks.js";
+import Notes from "./Notes.js";
+import Links from "./Links.js";
 
 // import Chinhnh from "../ChiNhanh"
 const VatTu = () => {
@@ -191,10 +191,10 @@ const VatTu = () => {
       </div>
 
       <div style={{ marginLeft: "260px" }}>
-        {show && <TRANG1 Data1={Data1} />}
-        {show1 && <TRANG2 Data2={Data2} />}
-        {show2 && <TRANG3 />}
-        {show3 && <TRANG4 />}
+        {show && <AllTasks Data1={Data1} />}
+        {show1 && <ImportantTasks Data2={Data2} />}
+        {show2 && <Notes />}
+        {show3 && <Links />}
       </div>
     </div>
   );

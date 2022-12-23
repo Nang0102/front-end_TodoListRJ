@@ -36,10 +36,10 @@ function DangNhap() {
     });
     response.json().then((val) => {
       if (val.role === "user") {
-        navigate(`/VatTu`);
+        navigate(`/Task`);
       }
       if (val.role === "admin") {
-        navigate(`/VatTu`);
+        navigate(`/Task`);
       }
       if (val.VaiTro === "NhanVien") {
         navigate(`/BanHang`);

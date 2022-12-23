@@ -31,7 +31,9 @@ function TRANG1({ Data1 }) {
 
   //FOr Delete Model
   const [Viewadd, SetaddShow] = useState(false);
-  const handleaddShow = () => {};
+  const handleaddShow = () => {
+    SetaddShow(true);
+  };
   const hanldeaddClose = () => {
     SetaddShow(false);
     SetaddShow(true);

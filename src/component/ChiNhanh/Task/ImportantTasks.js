@@ -7,7 +7,7 @@ import moment from "moment";
 import DataTable from "react-data-table-component";
 
 import axios from "axios";
-function TRANG2({ Data2 }) {
+function ImportantTasks({ Data2 }) {
   const [TimKiem, setTimKiem] = useState("");
   const [loading, setLoading] = useState(false);
   const [RowData, SetRowData] = useState([]);
@@ -320,4 +320,4 @@ function TRANG2({ Data2 }) {
     </>
   );
 }
-export default TRANG2;
+export default ImportantTasks;

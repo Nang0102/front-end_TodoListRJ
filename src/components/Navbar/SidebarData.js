@@ -8,7 +8,7 @@ import * as IoIcons from "react-icons/io";
 export const SidebarData = [
   {
     title: "Task",
-    path: "/VatTu",
+    path: "/Task",
     // icon: <BsJustify />,
     icon: <IoIcons.IoIosPaper />,
     cName: "nav-text",
@@ -21,7 +21,7 @@ export const SidebarData = [
   },
   {
     title: "Someday",
-    path: "/VatTu",
+    path: "/Task",
     icon: <FaIcons.FaCartPlus />,
     cName: "nav-text",
   },
@@ -34,7 +34,7 @@ export const SidebarData = [
   },
   {
     title: "Anytime",
-    path: "/VatTu",
+    path: "/Task",
     // path: "/Avatar",
     icon: <AiIcons.AiFillDollarCircle />,
     cName: "nav-text",

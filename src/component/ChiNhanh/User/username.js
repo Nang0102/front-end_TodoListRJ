@@ -37,42 +37,6 @@ function Username() {
           setLoading(false);
         });
     }
-    // if ((url = `https://backendtodolist.onrender.com/user/avatar`)) {
-    //   axios
-
-    //     .get(`${url}/${id}`)
-
-    //     .then((response) => {
-    //       const result = response.data;
-    //       setData(result);
-    //       setLoading(false);
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //       setLoading(false);
-    //     });
-    // }
-    // if ((url = `https://backendtodolist.onrender.com/todo/statistic`)) {
-    //   if (userId == id) {
-    //     axios
-
-    //       .get(`${url}/${userId}`)
-
-    //       .then((response) => {
-    //         const result = response.data;
-    //         result.map((data) => {
-    //           return (data.statistic = result.push());
-    //         });
-    //         console.log("resStatistic", result);
-    //         setData(result);
-    //         setLoading(false);
-    //       })
-    //       .catch((err) => {
-    //         console.log(err);
-    //         setLoading(false);
-    //       });
-    //   }
-    // }
   };
 
   useEffect(() => {
@@ -88,8 +52,6 @@ function Username() {
   };
 
   const handleEdit = () => {
-    // console.log("handle edit dkf", id);
-
     const url = `https://backendtodolist.onrender.com/user`;
     // const url = `http://localhost:5000/user`;
     let Credentials;
@@ -194,17 +156,6 @@ function Username() {
         />
       ),
     },
-    // {
-    //   name: <div style={{ fontSize: "20px" }}>Statistic</div>,
-    //   cell: (row) => {
-    //     return (
-    //       <div>
-    //         <p>statistic</p>
-    //         {row.statistic}
-    //       </div>
-    //     );
-    //   },
-    // },
 
     {
       name: <div style={{ fontSize: "20px" }}>Actions </div>,
